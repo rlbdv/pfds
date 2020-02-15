@@ -68,7 +68,11 @@
          (h (alist->hamt l string-hash string=?))
          (add (lambda (k v acc) (hamt-set acc k v))))
     (test-compare compare-string-alist l
-                  (hamt->alist (hamt-fold add (make-string-hamt) h)))))
+                  (hamt->alist (hamt-fold add (make-string-hamt) h))))
+  (let* ((l '(("a" . 1) ("b" . 2) ("c" . 3)))
+         ;; The hash value that originally triggered the bug
+         (h (alist->hamt l (lambda (x) 16939754213367027) eqv?)))
+    (hamt-fold (lambda (k v acc) acc) #t h)))
 
 (define-test-case hamts hamt-removal ()
   ;; removed key exists
