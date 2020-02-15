@@ -2,7 +2,6 @@
 (library (pfds tests heaps)
 (export heaps)
 (import (rnrs)
-        (wak trc-testing)
         (pfds tests utils)
         (pfds heaps))
 
@@ -67,5 +66,7 @@
                   (heap-sort < l1))
       (test-equal (list-sort < l2)
                   (heap-sort < l2)))))
+
+(test-end)
 
 )

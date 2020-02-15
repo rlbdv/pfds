@@ -20,18 +20,7 @@
         (pfds tests fingertrees)
         (pfds tests sequences)
         (pfds tests hamts)
-        (pfds tests utils)
-        (wak trc-testing))
+        (srfi :64))
 
-;; Some schemes use lazy loading of modules, and so I can't just use
-;; (run-test pfds) and rely on the side effects in the other modules
-;; to add them to the pfds parent suite.
-(define-syntax add-tests!
-  (syntax-rules ()
-    ((add-tests! suite ...)
-     (begin (add-test! pfds 'suite suite) ...))))
-
-(add-tests! queues deques bbtrees sets psqs
-            heaps fingertrees sequences hamts)
-
-(run-test pfds)
+(unless (zero? (test-runner-fail-count (test-runner-current)))
+  (exit 2))

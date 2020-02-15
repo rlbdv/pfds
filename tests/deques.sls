@@ -2,7 +2,6 @@
 (library (pfds tests deques)
 (export deques)
 (import (rnrs)
-        (wak trc-testing)
         (pfds tests utils)
         (pfds deques))
 
@@ -116,5 +115,7 @@
     (test-equal l2 (id-list l2))
     (test-equal l3 (id-list l3))
     (test-equal l4 (id-list l4))))
+
+(test-end)
 
 )

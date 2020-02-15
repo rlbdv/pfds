@@ -2,7 +2,6 @@
 (library (pfds tests fingertrees)
 (export fingertrees)
 (import (rnrs)
-        (wak trc-testing)
         (pfds tests utils)
         (rename (pfds fingertrees)
                 (make-fingertree %make-fingertree)
@@ -177,5 +176,7 @@
       (test-not
        (equal? (fingertree-measure (list->last-tree l2))
                (fingertree-measure (fingertree-reverse (list->product-tree l2))))))))
+
+(test-end)
 
 )

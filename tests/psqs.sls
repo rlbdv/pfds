@@ -2,7 +2,6 @@
 (library (pfds tests psqs)
 (export psqs)
 (import (rnrs)
-        (wak trc-testing)
         (pfds tests utils)
         (pfds psqs))
 
@@ -140,5 +139,7 @@
                   (psq-at-most-range psq 80 #\t #\t))
       ;; if lower bound is higher than upper, then nothing
       (test-equal '() (psq-at-most-range psq 80 #\t #\r)))))
+
+(test-end)
 
 )

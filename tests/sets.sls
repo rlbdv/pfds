@@ -2,7 +2,6 @@
 (library (pfds tests sets)
 (export sets)
 (import (rnrs)
-        (wak trc-testing)
         (pfds tests utils)
         (pfds sets))
 
@@ -90,5 +89,7 @@
   (test-eqv 0 (set-fold + 0 (list->set '() <)))
   (test-eqv 84 (set-fold + 0 (list->set '(3 12 62 7) <)))
   (test-eqv 499968 (set-fold * 1 (list->set '(3 12 62 7 8 4) <))))
+
+(test-end)
 
 )

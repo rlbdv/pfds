@@ -2,7 +2,6 @@
 (library (pfds tests hamts)
 (export hamts)
 (import (rnrs)
-        (wak trc-testing)
         (pfds tests utils)
         (pfds hamts))
 
@@ -141,5 +140,7 @@
                   (hamt->alist (hamt-map stringify h))))
   (let ((h (alist->hamt '(("a" . 97) ("b" . 98) ("c" . 99)) string-hash string=?)))
     (test-eqv (hamt-size h) (hamt-size (hamt-map (lambda (x) x) h)))))
+
+(test-end)
 
 )

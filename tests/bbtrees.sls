@@ -2,7 +2,6 @@
 (library (pfds tests bbtrees)
 (export bbtrees)
 (import (rnrs)
-        (wak trc-testing)
         (pfds tests utils)
         (pfds bbtrees))
 
@@ -181,5 +180,7 @@
                        '(0 1 2 3 4 5 6 7 8 9 10 11 12 13 14)))
       (test-exn assertion-violation? (bbtree-ref/index bb -1))
       (test-exn assertion-violation? (bbtree-ref/index bb 15)))))
+
+(test-end)
 
 )

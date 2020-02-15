@@ -2,7 +2,6 @@
 (library (pfds tests sequences)
 (export sequences)
 (import (rnrs)
-        (wak trc-testing)
         (pfds tests utils)
         (pfds sequences))
 
@@ -19,5 +18,7 @@
       (test-eqv 'two (sequence-ref s 2))
       (test-exn assertion-violation? (sequence-ref s -1))
       (test-exn assertion-violation? (sequence-ref s 3)))))
+
+(test-end)
 
 )

@@ -2,7 +2,6 @@
 (library (pfds tests queues)
 (export queues)
 (import (rnrs)
-        (wak trc-testing)
         (pfds tests utils)
         (pfds queues))
 
@@ -52,5 +51,7 @@
          (queue (list->queue list)))
     (test-eqv 5 (queue-length queue))
     (test-equal list (queue->list queue))))
+
+(test-end)
 
 )
